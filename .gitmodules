@@ -1,3 +1,6 @@
 [submodule "antigen-hs"]
 	path = antigen-hs
 	url = https://github.com/Tarrasch/antigen-hs.git
+[submodule "stderred"]
+	path = stderred
+	url = https://github.com/sickill/stderred.git
