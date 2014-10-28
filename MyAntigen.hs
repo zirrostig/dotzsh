@@ -8,7 +8,7 @@ import Shelly (shelly)
 bundles =
   [
     bundle "chrissicool/zsh-256color"
-  , bundle "supercrabtree/k"
+  , bundle "zirrostig/k"
   , bundle "Tarrasch/zsh-bd"
   , bundle "Tarrasch/zsh-colors"
   , bundle "Tarrasch/zsh-command-not-found"

@@ -60,6 +60,12 @@ export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS="-R"
 
 ###############################################################################
+# STDERR Red
+###############################################################################
+export LD_PRELOAD="/home/zirro/.zsh/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
+
+
+###############################################################################
 # Load Colors in linux TTY
 ###############################################################################
 if [[ "$TERM" == "linux" ]]; then
