@@ -3,8 +3,10 @@
 ###############################################################################
 # Lets try out vim mode
 ###############################################################################
+export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>' # More important for if I switch back to emacs mode
 bindkey -v
 export KEYTIMEOUT=2     #Removes bad lag when switching to NORMAL
+
 
 #Some keybindings
 bindkey '^?' backward-delete-char

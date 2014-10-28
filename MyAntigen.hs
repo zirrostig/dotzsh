@@ -6,12 +6,15 @@ import Antigen (AntigenConfiguration (..), bundle, antigen)
 import Shelly (shelly)
 
 bundles =
-  [ bundle "Tarrasch/zsh-colors"
-  , bundle "Tarrasch/zsh-functional"
+  [
+    bundle "chrissicool/zsh-256color"
+  , bundle "supercrabtree/k"
   , bundle "Tarrasch/zsh-bd"
+  , bundle "Tarrasch/zsh-colors"
+  , bundle "Tarrasch/zsh-command-not-found"
+  , bundle "Tarrasch/zsh-functional"
   , bundle "zsh-users/zsh-syntax-highlighting"
   , bundle "zsh-users/zsh-history-substring-search"
-  -- Add your plugins here
   ]
 
 config = AntigenConfiguration bundles

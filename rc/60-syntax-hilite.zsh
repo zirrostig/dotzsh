@@ -1,7 +1,6 @@
 ###############################################################################
 # ZSH SYNTAX HIGHLIGHT
 ###############################################################################
-source $HOME/cfg/sources/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor pattern)
 ZSH_HIGHLIGHT_STYLES[cursor]='bg=red,bold'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta'

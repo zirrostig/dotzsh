@@ -57,8 +57,7 @@ export READNULLCMD="less"
 # Less Pipe
 ################################################################################
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
-# export LESSOPEN='|/usr/bin/lesspipe.sh %s'
-export LESS=" -R "
+export LESS="-R"
 
 ###############################################################################
 # Load Colors in linux TTY

@@ -3,7 +3,7 @@
 ###  http://zsh.sourceforge.net/Doc/
 ################################################################################
 
-for f in $HOME/cfg/zsh/*; do
+for f in $HOME/.zsh/rc/*; do
     source $f
 done
 
