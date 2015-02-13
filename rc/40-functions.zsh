@@ -1,3 +1,4 @@
+#!/bin/zsh
 # TO BE SOURCED FROM $HOME/.zshrc
 
 ###############################################################################
@@ -48,6 +49,11 @@ pty() {
 
 ptyless() {
     pty $@ | less
+}
+
+# Make emacs be disowned
+em() {
+    emacs "$@" &|
 }
 
 # More messing with less, make man pages pretty

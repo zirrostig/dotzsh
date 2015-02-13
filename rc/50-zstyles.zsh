@@ -10,6 +10,9 @@ zstyle ":completion:*" rehash yes
 zstyle ':completion:*:*:cdr:*:*' menu selection
 zstyle ':chpwd:*' recent-dirs-prune parent
 
+# mupdf
+zstyle ':completion:*:*:mupdf:*:*' file-patterns '*.pdf'
+
 #SSH config hosts
 if [ -f ~/.ssh/known_hosts ]; then
     hosts=(`awk '{print $1}' ~/.ssh/known_hosts | tr ',' '\n' `)

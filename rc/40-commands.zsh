@@ -1,11 +1,15 @@
+#!/bin/zsh
 # TO BE SOURCED FROM $HOME/.zshrc
 
 ###############################################################################
 # Lets try out vim mode
 ###############################################################################
+source ~/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
+
+
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>' # More important for if I switch back to emacs mode
 bindkey -v
-export KEYTIMEOUT=2     #Removes bad lag when switching to NORMAL
+export KEYTIMEOUT=1     #Removes bad lag when switching to NORMAL
 
 
 #Some keybindings
