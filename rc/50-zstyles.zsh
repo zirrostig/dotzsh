@@ -11,7 +11,7 @@ zstyle ':completion:*:*:cdr:*:*' menu selection
 zstyle ':chpwd:*' recent-dirs-prune parent
 
 # mupdf
-zstyle ':completion:*:*:mupdf:*:*' file-patterns '*.pdf'
+zstyle ':completion:*:*:mupdf:*:*' file-patterns '*.pdf' '*(-/):directories'
 
 #SSH config hosts
 if [ -f ~/.ssh/known_hosts ]; then
