@@ -1,4 +1,5 @@
 plugins/*
+stderred
 stderred/*
 
 !plugins/Makefile
