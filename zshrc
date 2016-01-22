@@ -3,11 +3,19 @@
 ###  http://zsh.sourceforge.net/Doc/
 ################################################################################
 
-if [[ $+commands[stat] == 0 ]]; then
-    # stat isn't available so we are probably screwed anyways.
+if [[ "$(uname)" == "Linux" ]]; then
+    if [[ $+commands[readlink] != 0 ]]; then
+        export ZSHRC_DIR=${$(readlink ${(%):-%N})%/*}
+    fi
+elif [[ "$(uname)" == "FreeBSD" ]]; then
+    if [[ $+commands[stat] != 0 ]]; then
+        export ZSHRC_DIR=${$(stat -f "%R" ${(%):-%N})%/*}
+    fi
+fi
+
+if [[ -z "$ZSHRC_DIR" ]]; then
+    # Don't have stat ?! What OS is it?
     export ZSHRC_DIR=${HOME}/.zsh
-else
-    export ZSHRC_DIR=${$(stat -f "%R" ${(%):-%N})%/*}
 fi
 
 # All my plugins first
