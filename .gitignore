@@ -3,3 +3,5 @@ stderred
 stderred/*
 
 !plugins/Makefile
+
+.zsh_hist
