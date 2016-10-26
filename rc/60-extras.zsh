@@ -6,7 +6,7 @@ bindkey "\C-x\C-t" tetris
 
 autoload -U tetriscurses
 
-#Bash like command line edit
+# Bash like command line edit
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
@@ -14,11 +14,15 @@ bindkey '\C-x\C-e' edit-command-line
 # Awesome bulk mv command
 autoload -U zmv
 
-#Setup cdr
+# Setup cdr
 autoload -U add-zsh-hook
 autoload -U cdr
 autoload -U chpwd_recent_dirs
 add-zsh-hook chpwd chpwd_recent_dirs
+
+# Make backward kill word kill to '/' also instead of just whitespace
+autoload -U select-word-style
+select-word-style bash
 
 ################################################################################
 ### Zsh Modules

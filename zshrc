@@ -18,12 +18,9 @@ if [[ -z "$ZSHRC_DIR" ]]; then
     export ZSHRC_DIR=${HOME}/.zsh
 fi
 
-# All my plugins first
-source "${ZSHRC_DIR}/plugins/plugins.zsh"
-
 # Configs that should work everywhere
 # This should enumerate them in the correct order
-for f in ${ZSHRC_DIR}/rc/*; do
+for f in ${ZSHRC_DIR}/rc/*(N); do
     source $f
 done
 

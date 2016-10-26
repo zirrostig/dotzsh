@@ -37,3 +37,7 @@ compdef _man man
 zshrc() {
     $EDITOR $ZSHRC_DIR/$1
 }
+
+svn-diff() {
+    svn diff "$1" | highlight -O ansi -S diff
+}

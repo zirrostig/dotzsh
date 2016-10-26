@@ -4,50 +4,45 @@ all: clobber update
 clobber:
 	rm -f plugins.zsh
 
-update: zsh-256color-update zsh-bd-update zsh-colors-update zsh-command-not-found-update zsh-functional-update zsh-syntax-highlighting-update zsh-history-substring-search-update k-update
+update: zsh-256color-update zsh-bd-update zsh-colors-update zsh-functional-update zsh-syntax-highlighting-update zsh-history-substring-search-update k-update
 
 zsh-256color-update: zsh-256color
 	@echo git pull $<
 	@git -C $< pull 2>/dev/null >/dev/null
-	@echo "source $(cwd)/$</*.plugin.zsh" >> plugins.zsh
+	@echo "source $(cwd)/$</*.plugin.zsh" >> 00-plugins.zsh
 
 zsh-bd-update: zsh-bd
 	@echo git pull $<
 	@git -C $< pull 2>/dev/null >/dev/null
-	@echo "source $(cwd)/$</*.plugin.zsh" >> plugins.zsh
+	@echo "source $(cwd)/$</*.plugin.zsh" >> 00-plugins.zsh
 
 zsh-colors-update: zsh-colors
 	@echo git pull $<
 	@git -C $< pull 2>/dev/null >/dev/null
-	@echo "source $(cwd)/$</*.plugin.zsh" >> plugins.zsh
-
-zsh-command-not-found-update: zsh-command-not-found
-	@echo git pull $<
-	@git -C $< pull 2>/dev/null >/dev/null
-	@echo "source $(cwd)/$</*.plugin.zsh" >> plugins.zsh
+	@echo "source $(cwd)/$</*.plugin.zsh" >> 00-plugins.zsh
 
 zsh-functional-update: zsh-functional
 	@echo git pull $<
 	@git -C $< pull 2>/dev/null >/dev/null
-	@echo "source $(cwd)/$</*.plugin.zsh" >> plugins.zsh
+	@echo "source $(cwd)/$</*.plugin.zsh" >> 00-plugins.zsh
 
 zsh-syntax-highlighting-update: zsh-syntax-highlighting
 	@echo git pull $<
 	@git -C $< pull 2>/dev/null >/dev/null
-	@echo "source $(cwd)/$</*.plugin.zsh" >> plugins.zsh
+	@echo "source $(cwd)/$</*.plugin.zsh" >> 90-plugins.zsh
 
 zsh-history-substring-search-update: zsh-history-substring-search
 	@echo git pull $<
 	@git -C $< pull 2>/dev/null >/dev/null
-	@echo "source $(cwd)/$</zsh-history-substring-search.zsh" >> plugins.zsh
+	@echo "source $(cwd)/$</zsh-history-substring-search.zsh" >> 00-plugins.zsh
 
 k-update: k
 	@echo git pull $<
 	@git -C $< pull 2>/dev/null >/dev/null
-	@echo "source $(cwd)/$</*.plugin.zsh" >> plugins.zsh
+	@echo "source $(cwd)/$</*.plugin.zsh" >> 00-plugins.zsh
 
 
-pull: zsh-256color zsh-bd zsh-colors zsh-command-not-found zsh-functional zsh-syntax-highlighting zsh-history-substring-search k
+pull: zsh-256color zsh-bd zsh-colors zsh-functional zsh-syntax-highlighting zsh-history-substring-search k
 
 zsh-256color:
 	@echo git clone $@
@@ -60,10 +55,6 @@ zsh-bd:
 zsh-colors:
 	@echo git clone $@
 	@git clone https://github.com/Tarrasch/zsh-colors 2>/dev/null >/dev/null
-
-zsh-command-not-found:
-	@echo git clone $@
-	@git clone https://github.com/Tarrasch/zsh-command-not-found 2>/dev/null >/dev/null
 
 zsh-functional:
 	@echo git clone $@
@@ -86,7 +77,6 @@ clean:
 	rm -rf zsh-256color
 	rm -rf zsh-bd
 	rm -rf zsh-colors
-	rm -rf zsh-command-not-found
 	rm -rf zsh-functional
 	rm -rf zsh-syntax-highlighting
 	rm -rf zsh-history-substring-search

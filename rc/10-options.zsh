@@ -21,7 +21,7 @@ setopt AUTO_PARAM_KEYS
 setopt AUTO_PARAM_SLASH
 setopt AUTO_REMOVE_SLASH
 #setopt COMPLETE_ALIASES
-#setopt GLOB_COMPLETE
+setopt GLOB_COMPLETE
 setopt LIST_AMBIGUOUS
 setopt LIST_PACKED
 setopt LIST_TYPES
@@ -37,6 +37,7 @@ setopt CASE_MATCH
 setopt EQUALS
 setopt EXTENDED_GLOB
 setopt GLOB
+setopt GLOB_STAR_SHORT
 setopt MULTIBYTE
 setopt NOMATCH
 setopt NUMERIC_GLOB_SORT
@@ -92,9 +93,13 @@ setopt LOCAL_LOOPS
 setopt MULTI_FUNC_DEF
 setopt MULTIOS
 setopt OCTAL_ZEROES
+
+####################
+# Shell Emulation
 setopt BSD_ECHO
 
 ####################
 # ZLE
+setopt NOBEEP
 setopt COMBINING_CHARS
 setopt ZLE
