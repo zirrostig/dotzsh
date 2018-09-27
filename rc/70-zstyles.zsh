@@ -6,6 +6,9 @@ zstyle ':completion:*:*:*:*:*' menu select
 # Auto rehashing
 zstyle ":completion:*" rehash yes
 
+# Case insensitive cd
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
 # cdr
 zstyle ':completion:*:*:cdr:*:*' menu selection
 zstyle ':chpwd:*' recent-dirs-prune parent

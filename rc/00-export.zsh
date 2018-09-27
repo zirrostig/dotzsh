@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 export EDITOR="vim"
-export BROWSER="qutebrowser"
+export BROWSER="vimb"
 export WINEARCH="win64"
 export READNULLCMD="less"
 

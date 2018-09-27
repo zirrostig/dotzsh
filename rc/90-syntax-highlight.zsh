@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor pattern)
 ZSH_HIGHLIGHT_STYLES[cursor]='bg=red,bold'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta'
