@@ -1,3 +1,3 @@
 #!/bin/zsh
-export PATH=${HOME}/l/bin:${PATH}
 export GOPATH=${HOME}/.go
+export PATH=${HOME}/l/bin:$(go env GOPATH)/bin:${PATH}
