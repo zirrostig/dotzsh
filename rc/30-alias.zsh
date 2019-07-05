@@ -3,7 +3,6 @@
 ####################
 # Aliases
 
-alias ls='ls --color=auto'
 alias ll='k'
 alias la='k -a'
 alias p=ls

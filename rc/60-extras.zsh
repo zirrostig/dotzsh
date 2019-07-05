@@ -13,6 +13,7 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
 
+# Make backward kill word kill to '/' also instead of just whitespace
 autoload -U select-word-style
 select-word-style bash
 
@@ -25,17 +26,13 @@ autoload -U cdr
 autoload -U chpwd_recent_dirs
 add-zsh-hook chpwd chpwd_recent_dirs
 
-# Make backward kill word kill to '/' also instead of just whitespace
-autoload -U select-word-style
-select-word-style bash
-
 ################################################################################
 ### Zsh Modules
 ################################################################################
 # zmodload zsh/attr
 zmodload zsh/clone
 zmodload zsh/datetime
-zmodload zsh/db/gdbm
+# zmodload zsh/db/gdbm
 zmodload zsh/deltochar
 zmodload zsh/files
 zmodload zsh/mapfile

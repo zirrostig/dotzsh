@@ -3,7 +3,7 @@
 ###  http://zsh.sourceforge.net/Doc/
 ################################################################################
 
-if [[ "$(uname)" == "Linux" ]]; then
+if [[ "$(uname)" =~ "Linux|Darwin" ]]; then
     if [[ $+commands[readlink] != 0 ]]; then
         export ZSHRC_DIR=${$(readlink ${(%):-%N})%/*}
     fi
@@ -32,6 +32,6 @@ done
 
 # Configs specific to a machine, by hostname
 HOSTRC_DIR=${ZSHRC_DIR}/rc-host
-for f in ${HOSTRC_DIR}/${HOST}/*(N); do
+for f in ${HOSTRC_DIR}/${HOST%%\.*}/*(N); do
     source $f
 done
