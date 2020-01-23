@@ -1,11 +1,13 @@
 #!/bin/zsh
 
+# Completion
+autoload -U compinit 
+
 # Emacs bindings
 bindkey -e
 
 autoload -U tetris && zle -N tetris   #Because we can
 bindkey "\C-x\C-t" tetris
-
 autoload -U tetriscurses
 
 # Bash like command line edit

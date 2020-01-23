@@ -5,7 +5,12 @@ clobber:
 	rm -f 00-plugins.zsh
 	rm -f 90-plugins.zsh
 
-update: zsh-256color-update zsh-autosuggestions-update zsh-bd-update zsh-colors-update zsh-functional-update zsh-syntax-highlighting-update zsh-history-substring-search-update k-update zaw-update
+update: agkozak-zsh-prompt-update zsh-256color-update zsh-autosuggestions-update zsh-bd-update zsh-colors-update zsh-functional-update zsh-syntax-highlighting-update zsh-history-substring-search-update k-update zaw-update
+
+agkozak-zsh-prompt-update: agkozak-zsh-prompt
+	@echo git pull $<
+	@git -C $< pull 2>/dev/null >/dev/null
+	@echo "source $(cwd)/$</*.plugin.zsh" >> 00-plugins.zsh
 
 zsh-256color-update: zsh-256color
 	@echo git pull $<
@@ -53,7 +58,11 @@ k-update: k
 	@echo "source $(cwd)/$</*.plugin.zsh" >> 00-plugins.zsh
 
 
-pull: zsh-256color zsh-autosuggestions zsh-bd zsh-colors zsh-functional zsh-syntax-highlighting zsh-history-substring-search zaw k
+pull: agkozak-zsh-prompt zsh-256color zsh-autosuggestions zsh-bd zsh-colors zsh-functional zsh-syntax-highlighting zsh-history-substring-search zaw k
+
+agkozak-zsh-prompt:
+	@echo git clone $@
+	@git clone https://github.com/agkozak/agkozak-zsh-prompt 2>/dev/null >/dev/null
 
 zsh-256color:
 	@echo git clone $@
@@ -93,6 +102,7 @@ k:
 
 clean:
 	rm -f plugins.zsh
+	rm -rf agkozak-zsh-prompt
 	rm -rf zsh-256color
 	rm -rf zsh-bd
 	rm -rf zsh-colors

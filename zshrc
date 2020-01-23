@@ -3,6 +3,8 @@
 ###  http://zsh.sourceforge.net/Doc/
 ################################################################################
 
+# zmodload zsh/zprof # Uncomment to debug startup
+
 if [[ "$(uname)" =~ "Linux|Darwin" ]]; then
     if [[ $+commands[readlink] != 0 ]]; then
         export ZSHRC_DIR=${$(readlink ${(%):-%N})%/*}
@@ -35,3 +37,8 @@ HOSTRC_DIR=${ZSHRC_DIR}/rc-host
 for f in ${HOSTRC_DIR}/${HOST%%\.*}/*(N); do
     source $f
 done
+
+# Finally build completion
+compinit-cached
+
+# zprof # Uncomment to debug startup
