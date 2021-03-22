@@ -1,11 +1,13 @@
+.PHONY: agkozak-zsh-prompt-update zsh-256color-update zsh-autosuggestions-update zsh-bd-update zsh-colors-update zsh-functional-update zsh-syntax-highlighting-update zsh-history-substring-search-update k-update zaw-update zsh-poetry-update
 cwd=$(shell pwd)
+
 all: clobber update
 
 clobber:
 	rm -f 00-plugins.zsh
 	rm -f 90-plugins.zsh
 
-update: agkozak-zsh-prompt-update zsh-256color-update zsh-autosuggestions-update zsh-bd-update zsh-colors-update zsh-functional-update zsh-syntax-highlighting-update zsh-history-substring-search-update k-update zaw-update
+update: agkozak-zsh-prompt-update zsh-256color-update zsh-autosuggestions-update zsh-bd-update zsh-colors-update zsh-functional-update zsh-syntax-highlighting-update zsh-history-substring-search-update k-update zaw-update zsh-poetry-update
 
 agkozak-zsh-prompt-update: agkozak-zsh-prompt
 	@echo git pull $<
@@ -57,8 +59,12 @@ k-update: k
 	@git -C $< pull 2>/dev/null >/dev/null
 	@echo "source $(cwd)/$</*.plugin.zsh" >> 00-plugins.zsh
 
+zsh-poetry-update: zsh-poetry
+	@echo git pull $<
+	@git -C $< pull 2>/dev/null >/dev/null
+	@echo "source $(cwd)/$</*.plugin.zsh" >> 00-plugins.zsh
 
-pull: agkozak-zsh-prompt zsh-256color zsh-autosuggestions zsh-bd zsh-colors zsh-functional zsh-syntax-highlighting zsh-history-substring-search zaw k
+pull: agkozak-zsh-prompt zsh-256color zsh-autosuggestions zsh-bd zsh-colors zsh-functional zsh-syntax-highlighting zsh-history-substring-search zaw k zsh-poetry
 
 agkozak-zsh-prompt:
 	@echo git clone $@
@@ -100,6 +106,10 @@ k:
 	@echo git clone $@
 	@git clone https://github.com/zirrostig/k 2>/dev/null >/dev/null
 
+zsh-poetry:
+	@echo git clone $@
+	@git clone https://github.com/darvid/zsh-poetry 2>/dev/null >/dev/null
+
 clean:
 	rm -f plugins.zsh
 	rm -rf agkozak-zsh-prompt
@@ -111,3 +121,4 @@ clean:
 	rm -rf zsh-history-substring-search
 	rm -rf zaw
 	rm -rf k
+	rm -rf zsh-poetry

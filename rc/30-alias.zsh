@@ -1,8 +1,7 @@
 #!/bin/zsh
 
 ####################
-# Aliases
-
+# Normal Aliases
 alias ll='k --no-vcs'
 alias la='k --no-vcs -a'
 alias p=ls
@@ -16,6 +15,12 @@ alias grep='grep --color=auto'
 
 if (( $+commands[hub] )); then
     alias git=hub
+fi
+
+###################
+# Global Aliases
+if (($+commands[jq] )); then
+    alias -g JQ='| jq ''.'''
 fi
 
 # Need to find a better place for this
