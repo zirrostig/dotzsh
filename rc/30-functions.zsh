@@ -41,12 +41,6 @@ svn-diff() {
     svn diff "$1" | highlight -O ansi -S diff
 }
 
-task() {
-    pushd
-    taskell
-    popd
-}
-
 compinit-cached() {
     # From this gist. https://gist.github.com/ctechols/ca1035271ad134841284
     #

@@ -81,7 +81,7 @@ unsetopt NOTIFY
 
 ####################
 # Prompt
-# Found in rc/50-prompt.zsh
+# Found in rc/80-prompt.zsh
 
 ####################
 # Scripting

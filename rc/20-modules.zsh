@@ -1,32 +1,28 @@
 #!/bin/zsh
 
+# Enable hooking existing functions
+autoload -Uz add-zsh-hook
+
 # Completion
-autoload -U compinit 
+autoload bashcompinit
+bashcompinit
+autoload -U compinit
 
 # Emacs bindings
 bindkey -e
-
-autoload -U tetris && zle -N tetris   #Because we can
-bindkey "\C-x\C-t" tetris
-autoload -U tetriscurses
 
 # Bash like command line edit
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
 
-# Make backward kill word kill to '/' also instead of just whitespace
-autoload -U select-word-style
-select-word-style bash
-
 # Awesome bulk mv command
 autoload -U zmv
 
 # Setup cdr
-autoload -U add-zsh-hook
-autoload -U cdr
-autoload -U chpwd_recent_dirs
+autoload -Uz cdr chpwd_recent_dirs
 add-zsh-hook chpwd chpwd_recent_dirs
+add-zsh-hook -Uz zsh_directory_name zsh_directory_name_cdr
 
 ################################################################################
 ### Zsh Modules

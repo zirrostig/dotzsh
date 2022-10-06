@@ -21,7 +21,7 @@ if [ -f ~/.ssh/known_hosts ]; then
     hosts=(`awk '{print $1}' ~/.ssh/known_hosts | tr ',' '\n' `)
 fi
 if [ -f ~/.ssh/config ]; then
-    hosts=($hosts `grep '^Host' ~/.ssh/config | sed 's/Host\ //' | egrep -v '^\*$'`)
+    hosts=($hosts `grep '^Host' ~/.ssh/config | sed 's/Host\ //' | grep -Ev '^\*$'`)
 fi
 if [ "$hosts" ]; then
     zstyle ':completion:*:hosts' hosts $hosts

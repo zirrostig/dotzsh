@@ -1,5 +1,12 @@
 #!/bin/zsh
 
+### Make it easy to add directory aliases
+add-dir-alias() {
+    hash -d $1=$PWD
+    mkdir -p ${ZSHRC_DIR}/rc-host/${HOST}
+    echo "hash -d $1=$PWD" >> ${ZSHRC_DIR}/rc-host/${HOST}/30-alias.zsh
+}
+
 ####################
 # Normal Aliases
 alias ll='k --no-vcs'
@@ -21,6 +28,7 @@ fi
 # Global Aliases
 if (($+commands[jq] )); then
     alias -g JQ='| jq ''.'''
+    alias -g JQQ='| jq '
 fi
 
 # Need to find a better place for this

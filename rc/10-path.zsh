@@ -1,3 +1,4 @@
 #!/bin/zsh
-export GOPATH=${HOME}/.go
-export PATH=${HOME}/l/bin:$(go env GOPATH)/bin:${PATH}
+
+# Where I usually put my custom executables
+export PATH=${HOME}/l/bin:${PATH}

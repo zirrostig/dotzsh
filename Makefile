@@ -3,7 +3,7 @@ all: plugins-dir stderred-make symlink
 plugins-dir:
 	$(MAKE) -C plugins
 
-stderred-make: stderred-update
+stderred-make: 
 	$(MAKE) -C stderred
 
 stderred-update: stderred
